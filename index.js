@@ -5,6 +5,12 @@ let rtx = 0;
 let tecl = 0;
 let mouse = 0;
 let total = 0;
+let preamd = 25000;
+let preintel = 30000;
+let prerx = 80000;
+let prertx = 100000;
+let pretecl = 7000;
+let premouse = 3000;
 const sumar = (a, b) => a + b;
 const multi = (a, b) => a * b;
 const div = (a, b) => a / b;
@@ -36,7 +42,7 @@ do {
             );
             amd = sumar(amd, unidades);
             cantidadProd = sumar(cantidadProd, unidades);
-            total = sumar(total, multi(unidades, 25000));
+            total = sumar(total, multi(unidades, preamd));
             break;
           case 2:
             unidades = parseInt(
@@ -44,7 +50,7 @@ do {
             );
             intel = sumar(intel, unidades);
             cantidadProd = sumar(cantidadProd, unidades);
-            total = sumar(total, multi(unidades, 30000));
+            total = sumar(total, multi(unidades, preintel));
             break;
           case 3:
             unidades = parseInt(
@@ -52,7 +58,7 @@ do {
             );
             rx = sumar(rx, unidades);
             cantidadProd = sumar(cantidadProd, unidades);
-            total = sumar(total, multi(unidades, 80000));
+            total = sumar(total, multi(unidades, prerx));
             break;
           case 4:
             unidades = parseInt(
@@ -60,7 +66,7 @@ do {
             );
             rtx = sumar(rtx, unidades);
             cantidadProd = sumar(cantidadProd, unidades);
-            total = sumar(total, multi(unidades, 100000));
+            total = sumar(total, multi(unidades, prertx));
             break;
           case 5:
             unidades = parseInt(
@@ -68,7 +74,7 @@ do {
             );
             mouse = sumar(mouse, unidades);
             cantidadProd = sumar(cantidadProd, unidades);
-            total = sumar(total, multi(unidades, 3000));
+            total = sumar(total, multi(unidades, premouse));
             break;
           case 6:
             unidades = parseInt(
@@ -76,7 +82,7 @@ do {
             );
             tecl = sumar(tecl, unidades);
             cantidadProd = sumar(cantidadProd, unidades);
-            total = sumar(total, multi(unidades, 7000));
+            total = sumar(total, multi(unidades, pretecl));
             break;
           default:
             break;
@@ -87,7 +93,7 @@ do {
       while (elegirProd != 1) {
         elegirProd = parseInt(
           prompt(
-            `El precio total de los componentes es:$${total}\n====================================\n1.Seguir Comprando\n2.Finalizar compra.`
+            `El precio total de los componentes es:$${total}\n====================================\n1-Seguir Comprando\n2-Finalizar compra`
           )
         );
         switch (elegirProd) {
@@ -95,12 +101,12 @@ do {
             unidades = parseInt(
               prompt(
                 `Usted esta llevando ${cantidadProd} de componentes por $${total}
-                \nAMD Ryzen X ${amd}:$${multi(amd, 25000)}
-                \nIntel Core i7 X ${intel}: $${multi(intel, 30000)}
-                \nRX 6700 X ${rx}: $${multi(rx, 80000)}
-                \nRTX 3060 X ${rtx}: $${multi(rtx, 25000)}
-                \nMouse G-502 X ${mouse}: $${multi(mouse, 3000)}
-                \nTeclado Hyperx X ${tecl}: $${multi(tecl, 7000)}
+                \nAMD Ryzen x ${amd}:$${multi(amd, preamd)}
+                \nIntel Core i7 x ${intel}: $${multi(intel, preintel)}
+                \nRX 6700 x ${rx}: $${multi(rx, prerx)}
+                \nRTX 3060 x ${rtx}: $${multi(rtx, prertx)}
+                \nMouse G-502 x ${mouse}: $${multi(mouse, premouse)}
+                \nTeclado Hyperx x ${tecl}: $${multi(tecl, pretecl)}
                 \niva: $${iva(total).toFixed(2)}
                 \nTotal con iva $${sumar(total, iva(total)).toFixed(2)}
                 \nPresione:\n1-Realizar la compra en un pago
@@ -111,7 +117,7 @@ do {
             switch (unidades) {
               case 1:
                 alert(
-                  `Su total es de $${sumar(total, iva(total)).toFixed(2)} Gracias por confiar en nosotros ${nombre}\n
+                  `Su total es de $${sumar(total, iva(total)).toFixed(2)} gracias por confiar en nosotros ${nombre}\n
 ⣿⣿⣿⣿⣿⣿⣿⡿⡛⠟⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⠿⠨⡀⠄⠄⡘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⠿⢁⠼⠊⣱⡃⠄⠈⠹⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
@@ -132,7 +138,7 @@ do {
                 alert(`Su total es de 6 cuotas de $${div(
                     sumar(total, sumar(iva(total), multi(total, 0.1))),
                     6
-                  ).toFixed(2)} Gracias por confiar en nosotros ${nombre}\n
+                  ).toFixed(2)} gracias por confiar en nosotros ${nombre}\n
   ⣿⣿⣿⣿⣿⣿⣿⡿⡛⠟⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
   ⣿⣿⣿⣿⣿⣿⠿⠨⡀⠄⠄⡘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
   ⣿⣿⣿⣿⠿⢁⠼⠊⣱⡃⠄⠈⠹⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
@@ -154,7 +160,7 @@ do {
                 alert(`Su total es de 12 cuotas de $${div(
                   sumar(total, sumar(iva(total), multi(total, 0.25))),
                   12
-                ).toFixed(2)} Gracias por confiar en nosotros ${nombre}\n
+                ).toFixed(2)} gracias por confiar en nosotros ${nombre}\n
 ⣿⣿⣿⣿⣿⣿⣿⡿⡛⠟⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⠿⠨⡀⠄⠄⡘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⠿⢁⠼⠊⣱⡃⠄⠈⠹⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
